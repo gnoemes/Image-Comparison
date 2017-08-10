@@ -234,9 +234,9 @@ public class ImageComparison {
     private void clearArea(int x1, int y1, int x2, int y2, int area) {
         for (int i = 0; i < height; i++)
             for (int j = 0; j < width; j++) {
-                if (((i >= y1) && (i <= y2)) && ((j == x1) || (j == x2))) difference[i][j] = area;
-                else if (((j >= x1) && (j <= x2)) && ((i == y1) || (i == y2))) difference[i][j] = area;
-                else if ((i > y1) && (i < y2) && (j > x1) && (j < x2)) difference[i][j] = 0;
+                if (((i >= y1-1) && (i <= y2+1)) && ((j == x1-1) || (j == x2+1))) difference[i][j] = area;
+                else if (((j >= x1-1) && (j <= x2+1)) && ((i == y1-1) || (i == y2+1))) difference[i][j] = area;
+                else if ((i >= y1) && (i <= y2) && (j >= x1) && (j <= x2)) difference[i][j] = 0;
             }
     }
 
@@ -248,7 +248,6 @@ public class ImageComparison {
     }
 
     private void showImage() {
-        ComponentManager c = new ComponentManager();
 
         resultImage = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
         resultImage = createImageFromPixels(resultImgPixels);
