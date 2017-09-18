@@ -1,5 +1,5 @@
 # Image-Comparison
-Compares two images and highlights them. Created to study recursive and java.io
+Compares two images and highlights them. Created to study recursive algorithms  and java.io
 
 Output:
 
